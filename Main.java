@@ -52,6 +52,47 @@ public class Main
 
         T_sort title_sor = new T_sort();
 
-        title_sor.sort_title(lib);
+        title_sor.sort_title(lib);    
+        
+        C_sort codes_sor = new C_sort();
+
+        codes_sor.sort_codes(lib);
+
+        System.out.println("Library storage :");
+
+        dis(lib,N,K);
+    }
+
+    public static void dis(Library lib , int N, int K)
+    {
+        Display<HashMap<Integer,String>> dd = new Display<HashMap<Integer,String>>(lib.get_tit()); 
+
+        Set s = dd.ret().entrySet();
+
+        Iterator trav = s.iterator();  
+
+        int tot_slots = N/K;
+        int racks = K;
+        int count =1;
+        int sl=1;
+
+        while(trav.hasNext())   
+        {
+            if(sl>tot_slots)
+            {
+                sl = 1;
+                count++;
+            }
+
+            Map.Entry trav2 = (Map.Entry)trav.next();  
+            
+            Object bno = trav2.getKey();
+            HashMap<Integer,ArrayList<Integer>> t_scott = new HashMap<Integer,ArrayList<Integer>>();
+            t_scott = lib.get_code();
+             
+            
+            System.out.println("Rack no:"+count+"    Slot no:    "+ sl +"  Title:  "+trav2.getValue() + "  ISBN:   "+t_scott.get(bno).get(0) + "   Barcode:    "+t_scott.get(bno).get(1));  
+            sl++;
+        }
     }
 }

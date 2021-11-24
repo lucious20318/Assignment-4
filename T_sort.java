@@ -9,7 +9,7 @@ public class T_sort<T extends Library>
     {    
 
         HashMap<Integer,String> book_titl = new HashMap<>();
-        ArrayList<Integer> sort_order = new ArrayList<>();
+        //ArrayList<Integer> sort_order = new ArrayList<>();
 
         book_titl = lib.get_tit();
 
@@ -45,6 +45,8 @@ public class T_sort<T extends Library>
         Set s = dd.ret().entrySet();
 
         Iterator trav = s.iterator();  
+
+        System.out.println("After sorting title wise :");
         while(trav.hasNext())   
         {
             Map.Entry trav2 = (Map.Entry)trav.next();  
@@ -53,7 +55,7 @@ public class T_sort<T extends Library>
             HashMap<Integer,ArrayList<Integer>> t_scott = new HashMap<Integer,ArrayList<Integer>>();
             t_scott = lib.get_code();
             
-            System.out.println("Book no :"+trav2.getKey()+"     Title:   "+trav2.getValue() + "     ISBN:     "+t_scott.get(bno).get(0) + "     Barcode:    "+t_scott.get(bno).get(1));  
+            System.out.println("Title:   "+trav2.getValue() + "     ISBN:     "+t_scott.get(bno).get(0) + "     Barcode:    "+t_scott.get(bno).get(1));  
         } 
     }
 }

@@ -36,4 +36,9 @@ public class Library
     {
         book_tit = book_titl;
     }
+
+    public void set_cod_sort(HashMap<Integer,ArrayList<Integer>> book_codes)
+    {
+        code_store = book_codes;
+    }
 }
