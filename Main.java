@@ -4,7 +4,6 @@ import java.lang.*;
 
 public class Main
 {
-
     private static Scanner sc = new Scanner(System.in);
     private static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) 
@@ -51,5 +50,8 @@ public class Main
             System.out.println();
         }
 
+        T_sort title_sor = new T_sort();
+
+        title_sor.sort_title(lib);
     }
 }

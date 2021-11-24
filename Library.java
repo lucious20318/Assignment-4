@@ -5,6 +5,7 @@ public class Library
 {
     private static HashMap<Integer,ArrayList<Integer>> code_store = new HashMap<>();
     private static HashMap<Integer,String> book_tit = new HashMap<>();
+    public static ArrayList<Integer> order = new ArrayList<>();
 
     public void set_code(int num,ArrayList<Integer> codes)
     {
@@ -26,4 +27,13 @@ public class Library
         return book_tit;
     }
 
+    public void set_order(ArrayList<Integer> ord)
+    {
+        this.order = ord;
+    }
+
+    public void set_tit_sort(HashMap<Integer,String> book_titl)
+    {
+        book_tit = book_titl;
+    }
 }
